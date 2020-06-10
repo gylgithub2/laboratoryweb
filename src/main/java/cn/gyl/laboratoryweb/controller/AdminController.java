@@ -211,7 +211,7 @@ public class AdminController {
 
 	/**
 	 *
-	 * @param listmap 0-xx
+	 * @param listmap 0-xxxnm
 	 * @Decription
 	 */
 	private void laboratoryStat(List<Map<String, String>> listmap, String searcherDateTime, TimeSection timesection,
