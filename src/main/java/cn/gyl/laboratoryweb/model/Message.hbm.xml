@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-4-13 22:36:42 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="cn.gyl.laboratoryweb.model.Message" table="labweb_MESSAGE">
+        <id name="messagePKID" type="java.lang.Integer" access="field">
+            <column name="message_pk_id" />
+            <generator class="native" />
+        </id>
+        <property name="userId" type="java.lang.Long" access="field">
+            <column name="user_id" />
+        </property>
+        <property name="msgType" type="java.lang.Integer" access="field">
+            <column name="msg_type" />
+        </property>
+        <property name="messageContent" type="java.lang.String" access="field">
+            <column name="message_content" />
+        </property>
+        <property name="userRole" type="java.lang.String" access="field">
+            <column name="user_role" />
+        </property>
+        <property name="userName" type="java.lang.String" access="field">
+            <column name="user_name" />
+        </property>
+        <property name="msgDate" type="java.util.Date" access="field">
+            <column name="msg_date" />
+        </property>
+        <property name="status" type="java.lang.Integer" access="field">
+            <column name="status" />
+        </property>
+    </class>
+</hibernate-mapping>

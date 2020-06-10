@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-2-24 14:11:01 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="cn.gyl.laboratoryweb.model.Admin" table="labweb_ADMIN">
+        <id name="adminPKID" type="java.lang.Integer">
+            <column name="admin_pk_id" />
+            <generator class="native" />
+        </id>
+        <property name="adminName" type="java.lang.String">
+            <column name="admin_name" />
+        </property>
+        <property name="adminAccount" type="java.lang.Long">
+            <column name="admin_account" />
+        </property>
+        <property name="adminPassword" type="java.lang.String">
+            <column name="admin_password" />
+        </property>
+    </class>
+</hibernate-mapping>

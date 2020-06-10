@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-3-6 17:48:41 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	<class name="cn.gyl.laboratoryweb.model.Video"
+		table="labweb_VIDEO">
+		<id name="videoPKID" type="java.lang.Integer">
+			<column name="video_pk_id" />
+			<generator class="native" />
+		</id>
+		<property name="videoName" type="java.lang.String">
+			<column name="video_name" />
+		</property>
+		<property name="fileName" type="java.lang.String">
+			<column name="file_name" />
+		</property>
+		<property name="videoPath" type="java.lang.String">
+			<column name="video_path" />
+		</property>
+		<property name="filePath" type="java.lang.String">
+			<column name="file_path" />
+		</property>
+		<property name="uploadDate" type="java.util.Date">
+			<column name="upload_date" />
+		</property>
+		<property name="teacherAccount" type="java.lang.Long">
+			<column name="teacher_account" />
+		</property>
+		<many-to-one name="experimentalProject" lazy="false"
+			class="cn.gyl.laboratoryweb.model.ExperimentalProject">
+			<column name="experimental_project" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>

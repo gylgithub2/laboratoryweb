@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+		
+	<context:component-scan  
+		base-package="cn.gyl.laboratoryweb.dao,cn.gyl.laboratoryweb.service,cn.gyl.laboratoryweb.controller,cn.gyl.laboratoryweb.web">
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+		<context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice" />
+	</context:component-scan>
+	
+		<!-- 读取jdbc.properties的配置 -->
+	<context:property-placeholder location="classpath:jdbc.properties" />
+	
+	<!-- c3p0数据库配置,以及数据库链接 -->
+	<bean id="dataSource"
+		class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="password" value="${jdbc.password}"></property>
+		<property name="user" value="${jdbc.userName}"></property>
+		<property name="jdbcUrl" value="${jdbc.url}"></property>
+		<property name="driverClass" value="${jdbc.driver}"></property>
+		<property name="acquireIncrement" value="${jdbc.acquireIncrement}"></property>
+		<property name="initialPoolSize" value="${jdbc.initialPoolSize}"></property>
+		<property name="minPoolSize" value="${jdbc.minPoolSize}"></property>
+		<property name="maxPoolSize" value="${jdbc.maxPoolSize}"></property>
+		<property name="maxStatements" value="${jdbc.maxStatements}"></property>
+		<property name="maxStatementsPerConnection" value="${jdbc.maxStatementsPerConnection}"></property>
+	</bean>
+	
+	<!-- hibernate重要的类的对象实例 -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="configLocation" value="classpath:hibernate.cfg.xml"></property>
+		<property name="mappingLocations" value="classpath:cn/gyl/laboratoryweb/model/*.hbm.xml"></property>
+	</bean>
+	
+	
+	<!-- 事务管理器 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="get*" read-only="true" />
+			<tx:method name="find*" read-only="true" />
+			<tx:method name="select*" read-only="true" />
+			<tx:method name="load*" read-only="true" />
+			<tx:method name="*" read-only="false" />
+		</tx:attributes>
+	</tx:advice>
+	<!-- AOP切面：事务切入点 -->
+	<aop:config>
+		<aop:pointcut expression="execution(* cn.gyl.laboratoryweb.*.*.*(..))" id="pointcut" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="pointcut" />
+	</aop:config>
+		
+</beans>

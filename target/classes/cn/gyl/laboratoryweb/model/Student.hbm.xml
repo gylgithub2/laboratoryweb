@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-2-21 14:30:12 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="cn.gyl.laboratoryweb.model.Student" table="labweb_student">
+        <id name="studentPKID" type="java.lang.Integer">
+            <column name="student_pk_id" />
+            <generator class="native" />
+        </id>
+        <property name="studentAccount" type="java.lang.Long">
+            <column name="student_account" />
+        </property>
+        <property name="icCard" type="java.lang.Long">
+            <column name="ic_card" />
+        </property>
+        <property name="studentName" type="java.lang.String">
+            <column name="student_name" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
+        </property>
+        <property name="violateScore" type="java.lang.Integer">
+            <column name="violate_score" />
+        </property>
+        <property name="absenceTime" type="java.lang.Integer">
+            <column name="absence_time" />
+        </property>
+        <property name="lateTime" type="java.lang.Integer">
+            <column name="late_time" />
+        </property>
+        <property name="studentPassword" type="java.lang.String">
+            <column name="student_password" />
+        </property>
+        <property name="stuClass" type="java.lang.Long">
+            <column name="stu_class" />
+        </property>
+    </class>
+</hibernate-mapping>

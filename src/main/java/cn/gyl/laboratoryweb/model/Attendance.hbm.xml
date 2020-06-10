@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-3-26 15:03:59 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="cn.gyl.laboratoryweb.model.Attendance" table="labweb_attendance">
+        <id name="attendancePKID" type="java.lang.Integer">
+            <column name="attendance_pk_id" />
+            <generator class="native" />
+        </id>
+        <property name="studentAccount" type="java.lang.Long">
+            <column name="student_account" />
+        </property>
+        <property name="punchDate" type="java.util.Date">
+            <column name="punch_date" />
+        </property>
+        <property name="startDate" type="java.util.Date">
+            <column name="start_date" />
+        </property>
+        <property name="endDate" type="java.util.Date">
+            <column name="end_date" />
+        </property>
+        <property name="teacherAccount" type="java.lang.Long">
+            <column name="teacher_account" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
+        </property>
+        <property name="experProjectId" type="java.lang.Long">
+            <column name="experProject_id" />
+        </property>
+        <property name="laboratoryId" type="java.lang.Long">
+            <column name="laboratory_id" />
+        </property>
+        <property name="isCheck" type="java.lang.Boolean">
+            <column name="is_check" />
+        </property>
+        <property name="isOpen" type="java.lang.Boolean">
+            <column name="is_open" />
+        </property>
+    </class>
+</hibernate-mapping>

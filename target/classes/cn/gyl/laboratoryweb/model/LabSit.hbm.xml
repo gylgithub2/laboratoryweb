@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-5-7 16:18:06 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="cn.gyl.laboratoryweb.model.LabSit" table="labweb_labsit">
+        <id name="labSitPKID" type="java.lang.Integer">
+            <column name="labSit_pk_id" />
+            <generator class="native" />
+        </id>
+        <property name="labID" type="java.lang.Long">
+            <column name="lab_id" />
+        </property>
+        <property name="sitId" type="java.lang.Integer">
+            <column name="sit_id" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
+        </property>
+    </class>
+</hibernate-mapping>

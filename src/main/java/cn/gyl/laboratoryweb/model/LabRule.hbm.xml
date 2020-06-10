@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-5-5 15:53:03 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="cn.gyl.laboratoryweb.model.LabRule" table="labweb_labRule">
+        <id name="labRulePKID" type="java.lang.Integer">
+            <column name="labRule_pk_id" />
+            <generator class="native" />
+        </id>
+        <property name="headline" type="java.lang.String">
+            <column name="headline" />
+        </property>
+        <property name="content" type="java.lang.String">
+            <column name="content" />
+        </property>
+        <property name="uploadDate" type="java.util.Date">
+            <column name="upload_date" />
+        </property>
+    </class>
+</hibernate-mapping>

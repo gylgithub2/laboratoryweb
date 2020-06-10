@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-2-21 14:30:29 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="cn.gyl.laboratoryweb.model.Watch" table="labweb_watch">
+        <id name="watchPKID" type="java.lang.Integer">
+            <column name="watch_pk_id" />
+            <generator class="native" />
+        </id>
+        <property name="studentAccount" type="java.lang.Long">
+            <column name="student_account" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
+        </property>
+        <property name="relateOrder" type="java.lang.Integer">
+            <column name="relate_order" />
+        </property>
+        <property name="isCheck" type="java.lang.Integer">
+            <column name="is_check" />
+        </property>
+        <property name="watchDate" type="java.util.Date">
+            <column name="watch_date" />
+        </property>
+        <property name="deadline" type="java.util.Date">
+            <column name="dead_line" />
+        </property>
+        <property name="experimentalProjectId" type="java.lang.Long">
+            <column name="experimentalProject_id" />
+        </property>
+        <property name="stuClassId" type="java.lang.Long">
+            <column name="stuClass_id" />
+        </property>
+    </class>
+</hibernate-mapping>

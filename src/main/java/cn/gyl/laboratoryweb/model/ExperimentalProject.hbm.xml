@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-3-6 17:48:41 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="cn.gyl.laboratoryweb.model.ExperimentalProject" table="labweb_EXPERIMENTALPROJECT">
+        <id name="experProjectPKID" type="java.lang.Integer">
+            <column name="experProject_pk_id" />
+            <generator class="native" />
+        </id>
+        <property name="experimentalProjectName" type="java.lang.String">
+            <column name="experimental_project_name" />
+        </property>
+        <property name="experimentalProjectId" type="java.lang.Long">
+            <column name="experimentalProject_id" />
+        </property>
+        <property name="hasVideo" type="java.lang.Boolean">
+            <column name="has_video" />
+        </property>
+        <many-to-one name="laboratory"
+			class="cn.gyl.laboratoryweb.model.Laboratory">
+			<column name="lab_Id" />
+		</many-to-one>
+    </class>
+</hibernate-mapping>

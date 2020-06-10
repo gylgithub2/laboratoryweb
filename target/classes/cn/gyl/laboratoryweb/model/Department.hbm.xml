@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-3-29 17:44:21 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="cn.gyl.laboratoryweb.model.Department" table="labweb_DEPARTMENT">
+        <id name="departmentPKID" type="java.lang.Integer">
+            <column name="department_pk_id" />
+            <generator class="native" />
+        </id>
+        <property name="departmentName" type="java.lang.String">
+            <column name="department_name" />
+        </property>
+    </class>
+</hibernate-mapping>

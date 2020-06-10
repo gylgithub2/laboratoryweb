@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-4-15 13:36:38 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="cn.gyl.laboratoryweb.model.Notice" table="labweb_notice">
+        <id name="noticePKID" type="java.lang.Integer">
+            <column name="notice_pk_id" />
+            <generator class="native" />
+        </id>
+        <property name="headline" type="java.lang.String">
+            <column name="headline" />
+        </property>
+        <property name="content" type="java.lang.String">
+            <column name="content" />
+        </property>
+        <property name="upDateTime" type="java.util.Date">
+            <column name="upDateTime" />
+        </property>
+    </class>
+</hibernate-mapping>

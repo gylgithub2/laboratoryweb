@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-3-26 14:57:24 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="cn.gyl.laboratoryweb.model.Order" table="labweb_order">
+        <id name="orderPKID" type="java.lang.Integer">
+            <column name="order_pk_id" />
+            <generator class="native" />
+        </id>
+        <property name="userId" type="java.lang.Long">
+            <column name="user_id" />
+        </property>
+        <property name="orderTime" type="java.util.Date">
+            <column name="order_time" />
+        </property>
+        <property name="startTime" type="java.util.Date">
+            <column name="start_time" />
+        </property>
+        <property name="endTime" type="java.util.Date">
+            <column name="end_time" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
+        </property>
+        <property name="userRole" type="java.lang.Integer">
+            <column name="user_role" />
+        </property>
+        <property name="roomSitId" type="java.lang.Integer">
+            <column name="room_sit_id" />
+        </property>
+        <property name="roomId" type="java.lang.Long">
+            <column name="room_id" />
+        </property>
+        <property name="stuClass" type="java.lang.Long">
+            <column name="stu_class" />
+        </property>
+        <property name="stuClassName" type="java.lang.String">
+            <column name="stu_class_name" />
+        </property>
+        <property name="userName" type="java.lang.String">
+            <column name="user_name" />
+        </property>
+        <property name="roomName" type="java.lang.String">
+            <column name="room_name" />
+        </property>
+        <property name="experProjectAccount" type="java.lang.Long">
+            <column name="exper_project_account" />
+        </property>
+    </class>
+</hibernate-mapping>
